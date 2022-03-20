@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="RadioButton" x:Key="blue_rb">
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="BorderColor" Value="#05AEF1"/>
+                <Setter Property="BackgroundColor" Value="#05AEF1"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="BorderColor" Value="#05AEF1"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+  
+    
+    
+</ResourceDictionary>

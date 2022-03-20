@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="Entry" x:Key="white_cornered_entry">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CornerRadius" Value="20"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="gray_bordered_entry">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="BorderColor" Value="Gray"/>
+        <Setter Property="BorderWidth" Value="1"/>
+    </Style>
+
+</ResourceDictionary>

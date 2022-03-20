@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+           x:Class="MyProject.ErrorMsgBox">
+    <xct:Popup.Resources>
+        <ResourceDictionary Source="../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../Resources/EntryStyles.xaml"/>
+    </xct:Popup.Resources>
+    <Frame 
+        BackgroundColor="White"
+        BorderColor="Red"
+        CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                Grid.Column="0"
+                Source="Media/Images/error_red.png" />
+            <Label 
+                Grid.Column="1"
+                FontSize="Header"
+                Text="{Binding Message}"/>
+            <Image
+                Grid.Column="2"
+                Source="Media/Images/close.png" />
+        </Grid>
+    </Frame>
+   
+
+</xct:Popup>

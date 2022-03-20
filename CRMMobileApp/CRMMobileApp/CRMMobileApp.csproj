@@ -1,0 +1,113 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Media\Images\calendar.png" />
+    <None Remove="Media\Images\close.png" />
+    <None Remove="Media\Images\cloud.png" />
+    <None Remove="Media\Images\customer.png" />
+    <None Remove="Media\Images\error_red.png" />
+    <None Remove="Media\Images\hamburger.png" />
+    <None Remove="Media\Images\info.png" />
+    <None Remove="Media\Images\LeftArrow.png" />
+    <None Remove="Media\Images\locker.png" />
+    <None Remove="Media\Images\lock_small.png" />
+    <None Remove="Media\Images\login.png" />
+    <None Remove="Media\Images\logo.png" />
+    <None Remove="Media\Images\Main\close_duty.png" />
+    <None Remove="Media\Images\Main\completed.png" />
+    <None Remove="Media\Images\Main\create_transaction.png" />
+    <None Remove="Media\Images\Main\open_cash.png" />
+    <None Remove="Media\Images\Main\sales_by_ingridients.png" />
+    <None Remove="Media\Images\Main\sales_on_duty.png" />
+    <None Remove="Media\Images\Main\stock_balance.png" />
+    <None Remove="Media\Images\Main\x_report.png" />
+    <None Remove="Media\Images\Main\x_report_cashier.png" />
+    <None Remove="Media\Images\minus.png" />
+    <None Remove="Media\Images\Payment\card_colored.png" />
+    <None Remove="Media\Images\Payment\cash_colored.png" />
+    <None Remove="Media\Images\percent.png" />
+    <None Remove="Media\Images\plus.png" />
+    <None Remove="Media\Images\print.png" />
+    <None Remove="Media\Images\receipt.png" />
+    <None Remove="Media\Images\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Media\Images\calendar.png" />
+    <EmbeddedResource Include="Media\Images\close.png" />
+    <EmbeddedResource Include="Media\Images\cloud.png" />
+    <EmbeddedResource Include="Media\Images\customer.png" />
+    <EmbeddedResource Include="Media\Images\error_red.png" />
+    <EmbeddedResource Include="Media\Images\hamburger.png" />
+    <EmbeddedResource Include="Media\Images\info.png" />
+    <EmbeddedResource Include="Media\Images\locker.png" />
+    <EmbeddedResource Include="Media\Images\lock_small.png" />
+    <EmbeddedResource Include="Media\Images\login.png" />
+    <EmbeddedResource Include="Media\Images\logo.png" />
+    <EmbeddedResource Include="Media\Images\Main\close_duty.png" />
+    <EmbeddedResource Include="Media\Images\Main\completed.png" />
+    <EmbeddedResource Include="Media\Images\Main\create_transaction.png" />
+    <EmbeddedResource Include="Media\Images\Main\open_cash.png" />
+    <EmbeddedResource Include="Media\Images\Main\sales_by_ingridients.png" />
+    <EmbeddedResource Include="Media\Images\Main\sales_on_duty.png" />
+    <EmbeddedResource Include="Media\Images\Main\stock_balance.png" />
+    <EmbeddedResource Include="Media\Images\Main\x_report.png" />
+    <EmbeddedResource Include="Media\Images\Main\x_report_cashier.png" />
+    <EmbeddedResource Include="Media\Images\minus.png" />
+    <EmbeddedResource Include="Media\Images\Payment\card_colored.png" />
+    <EmbeddedResource Include="Media\Images\Payment\cash_colored.png" />
+    <EmbeddedResource Include="Media\Images\percent.png" />
+    <EmbeddedResource Include="Media\Images\plus.png" />
+    <EmbeddedResource Include="Media\Images\print.png" />
+    <EmbeddedResource Include="Media\Images\receipt.png" />
+    <EmbeddedResource Include="Media\Images\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Media\Images\LeftArrow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Popups\AboutSoftware.xaml.cs">
+      <DependentUpon>AboutSoftware.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ErrorMsgBox.xaml.cs">
+      <DependentUpon>ErrorMsgBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\SendReceiptToMsgBox.xaml.cs">
+      <DependentUpon>SendReceiptToMsgBox.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\AuthKeyboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ButtonStyles.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\OneButtonedMsgBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\View1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
