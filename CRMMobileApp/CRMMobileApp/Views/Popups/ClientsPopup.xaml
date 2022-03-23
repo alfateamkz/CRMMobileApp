@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+             x:Class="CRMMobileApp.Views.Popups.ClientsPopup"
+             x:Name="this"
+             Size="750,250">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <RelativeLayout>
+        <Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0">
+                    <Label 
+                        FontSize="26"
+                        FontAttributes="Bold"
+                        Text="Клиенты"/>
+                    <controls:EntryOutlined  
+                            x:Name="entry"
+                            TextMargin="10,0,0,0"
+                            PlaceholderMargin="10,0,0,0"
+                            IsEnabled="True"
+                            Margin="20,25,20,0"
+                            Text="{Binding Source={Reference this},Path=SearchQuery,Mode=TwoWay}"
+                            Placeholder="Начните вводить имя или телефон"
+                            Style="{StaticResource gray_bordered_entry}"/>
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout 
+                                    Orientation="Horizontal">
+                                    <Label Text="Фамилия Имя"/>
+                                    <Label Text="+7979797979" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout
+                    Background="#E9E9E9"
+                    Grid.Column="1">
+                    <Label 
+                        FontSize="26"
+                        FontAttributes="Bold"
+                        Text="Клиент"/>
+                    <Label 
+                        TextColor="Gray"
+                        Text="ФИО"/>
+                    <StackLayout 
+                        Orientation="Horizontal">
+                        <Label 
+                            TextColor="Gray"
+                            Text="Телефон"/>
+                        <Label 
+                            TextColor="Gray"
+                            Text="Номер карты"/>
+                    </StackLayout>
+                    <Label 
+                        TextColor="Gray"
+                        Text="Дата рождения"/>
+                    <StackLayout 
+                        Orientation="Horizontal">
+                        <Button 
+                            Style="{StaticResource blue_bordered_btn}"
+                            Margin="200,0,0,0"
+                            Text="Создать"/>
+                        <Button 
+                            Style="{StaticResource gray_cornered_filled_btn}"
+                            Margin="25,0,0,0"
+                            Text="Выбрать клиента"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </RelativeLayout>
+</behaviors:Popup>

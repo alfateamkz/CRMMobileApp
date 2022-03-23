@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+           x:Name="this"
+           Size="300,200"
+           Background="Transparent"
+           BackgroundColor="Transparent"
+           x:Class="CRMMobileApp.Views.Popups.OneButtonedPopup">
+    <xct:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+    </xct:Popup.Resources>
+    <Frame 
+       
+        BackgroundColor="White"
+        CornerRadius="20">
+        <StackLayout>
+            <Label 
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,12,0,0"
+                Text="{Binding Source={Reference this},Path=Caption}"/>
+            <Label 
+                FontSize="14"
+                HorizontalOptions="Center"
+                Margin="0,28,0,0"
+                Text="{Binding Source={Reference this},Path=Message}"/>
+            <Button 
+                Command="{Binding Source={Reference this},Path=Close}"
+                Text="Ок"
+                HeightRequest="35"
+                Margin="70,28,70,8"
+                Style="{StaticResource blue_cornered_filled_btn}"/>
+        </StackLayout>
+    </Frame>
+
+
+</xct:Popup>

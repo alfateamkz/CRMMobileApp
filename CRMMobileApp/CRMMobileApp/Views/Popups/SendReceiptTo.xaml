@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup  xmlns:behaviors="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+                  x:Class="CRMMobileApp.Views.Popups.SendReceiptTo"
+                  BackgroundColor="{DynamicResource grayBlack}"
+                  Background="{DynamicResource grayBlack}"
+                  Size="400,250">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <Frame 
+        BackgroundColor="{DynamicResource grayBlack}"
+        Background="{DynamicResource grayBlack}"
+        CornerRadius="25">
+        <StackLayout    
+            BackgroundColor="{DynamicResource grayBlack}"
+            Background="{DynamicResource grayBlack}">
+            <Label 
+                TextColor="White"
+                FontSize="Header"
+                HorizontalOptions="Center"
+                Text="Отправить чек на телефон"/>
+            <Label 
+                TextColor="White"
+                FontSize="Header"
+                HorizontalOptions="Center"
+                Text=" или электронную почту"/>
+            <Label 
+                TextColor="White"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Заполнение обоих полей не обязательно"/>
+            <controls:EntryOutlined   
+                Margin="20,0,20,0"
+                Placeholder="E-mail"
+                HorizontalOptions="Center"
+                PlaceholderColor="#e5e5e5"
+                Style="{StaticResource white_cornered_entry}"/>
+            <controls:EntryOutlined    
+                Margin="20,0,20,0"
+                Placeholder="Телефон"
+                HorizontalOptions="Center"
+                PlaceholderColor="#e5e5e5"
+                Style="{StaticResource white_cornered_entry}"/>
+            <Button 
+                Margin="20,0,20,0"
+                Text="Сохранить"
+                Style="{StaticResource green_cornered_filled_btn}"/>
+        </StackLayout>
+    </Frame>
+</behaviors:Popup>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Name="this"
+             x:Class="CRMMobileApp.Views.Pages.Main.MainEquipmentPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout
+              Background="{DynamicResource grayBg}">
+            <Frame 
+                x:Name="navigationFrame"
+                CornerRadius="30"
+                Background="{DynamicResource blueColor}"
+                RelativeLayout.YConstraint="50"
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-150}" 
+                WidthRequest="300"
+                HeightRequest="15">
+                <StackLayout 
+                    Orientation="Horizontal">
+                    <Button 
+                        Margin="0"
+                        Padding="0"
+                        Command="{Binding Source={Reference this},Path=GoToMainMenuPage}"
+                        Style="{StaticResource transparent_btn}"
+                        Text="Главное"/>
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        Command="{Binding Source={Reference this},Path=GoToStockPage}"
+                        Style="{StaticResource transparent_btn}"
+                        Text="Склад"/>
+                    <Button
+                             Margin="0"
+                        Padding="0"
+                        Style="{StaticResource white_rounded_btn}"
+                        Text="Оборудование"/>
+                </StackLayout>
+            </Frame>
+
+
+            <xct:TabView
+                TabStripPlacement="Top"
+                TabStripBackgroundColor="Transparent"
+                TabStripHeight="60"
+                WidthRequest="400"
+                HeightRequest="400"
+                RelativeLayout.YConstraint="120"
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-180}" 
+                TabIndicatorColor="{DynamicResource blueColor}">
+
+                <xct:TabViewItem
+                    Icon="triangle.png"
+                    Text="ЭКВАЙРИНГ"
+                    TextColor="Gray"
+                    TextColorSelected="{DynamicResource blueColor}"
+                    FontSize="12">
+                    <Grid 
+                        Margin="0,20,0,0"
+                        BackgroundColor="Gray">
+                        <Label
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="TabContent1" />
+                    </Grid>
+                </xct:TabViewItem>
+
+                <xct:TabViewItem
+                    Icon="circle.png"
+                    Text="ПРИНТЕРЫ"
+                    TextColor="Gray"
+                    TextColorSelected="{DynamicResource blueColor}"
+                    FontSize="12">
+                    <Grid>
+                        <Label    
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="TabContent2" />
+                    </Grid>
+                </xct:TabViewItem>
+                <xct:TabViewItem
+                    Icon="circle.png"
+                    Text="КАССОВАЯ ТЕХНИКА"
+                    TextColor="Gray"
+                    TextColorSelected="{DynamicResource blueColor}"
+                    FontSize="12">
+                    <Grid>
+                        <Label    
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="TabContentі" />
+                    </Grid>
+                </xct:TabViewItem>
+            </xct:TabView>
+
+            <Button 
+                    FontSize="11"
+                     RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                             Property=Height, Factor=1, Constant=-50}" 
+                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                             Property=Width, Factor=0.5, Constant=-105}" 
+                    BackgroundColor="Transparent"
+                    BorderWidth="0"
+                    Text="Информация о программе">
+                <Button.ImageSource>
+                    <FileImageSource 
+                        
+                        File="info.png"/>
+                </Button.ImageSource>
+            </Button>
+           
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

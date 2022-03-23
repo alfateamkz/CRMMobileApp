@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -74,6 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveXAML" Version="2.1.73" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
     <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
@@ -85,14 +87,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Popups\AboutSoftware.xaml.cs">
-      <DependentUpon>AboutSoftware.xaml</DependentUpon>
+    <Compile Update="Views\Pages\Main\MainEquipmentPage.xaml.cs">
+      <DependentUpon>MainEquipmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Popups\ErrorMsgBox.xaml.cs">
-      <DependentUpon>ErrorMsgBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Popups\SendReceiptToMsgBox.xaml.cs">
-      <DependentUpon>SendReceiptToMsgBox.xaml</DependentUpon>
+    <Compile Update="Views\Pages\Main\MainStockPage.xaml.cs">
+      <DependentUpon>MainStockPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -100,13 +99,31 @@
     <EmbeddedResource Update="Controls\AuthKeyboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Custom\EntryOutlined.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\ButtonStyles.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Popups\OneButtonedMsgBox.xaml">
+    <EmbeddedResource Update="Views\Pages\Main\MainMenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\View1.xaml">
+    <EmbeddedResource Update="Views\Popups\AboutSoftware.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ClientsPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\LockedScreenPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\NewClientPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\OneButtonedPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SendReceiptTo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,12 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CRMMobileApp.MainPage">
-
-    <StackLayout>
-        <Entry Placeholder="хуй" />
-        <Switch />
-    </StackLayout>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+             xmlns:controls1="clr-namespace:CRMMobileApp.Controls"
+             x:Name="this"
+             x:Class="CRMMobileApp.MainPage"
+             BackgroundColor="#236D86">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <RelativeLayout >
+ 
+        <Image       Source="logo.png" 
+                     RelativeLayout.YConstraint="110"
+                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                        Property=Width, Factor=0.5, Constant=-80}" 
+                     WidthRequest="162"
+                     HeightRequest="80"/>
+ 
+        <controls:EntryOutlined  
+                 x:Name="entry"
+                TextMargin="40,0,0,0"
+                IsEnabled="False"
+                 Text="{Binding Source={Reference this},Path=Password,Mode=TwoWay}"
+                RelativeLayout.YConstraint="200"
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-80}" 
+                WidthRequest="162"
+                Style="{StaticResource gray_bordered_entry}"/>
+        <Image 
+             HeightRequest="30"
+             WidthRequest="30"
+             RelativeLayout.YConstraint="208"
+             RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=entry, 
+                     Property=X, Factor=1, Constant=10}" 
+             Source="login.png"/>
+        
+        <controls1:AuthKeyboard
+            Padding="0,0,0,0"
+                   x:Name="keyboard"
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-80}" 
+                     RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=entry, 
+                          Property=Y, Factor=1, Constant=60}" />
+    </RelativeLayout>
  
 
 </ContentPage>

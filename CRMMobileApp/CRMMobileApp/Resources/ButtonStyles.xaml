@@ -1,39 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    
     <Style TargetType="Button" x:Key="transparent_btn">
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="White"/>
     </Style>
 
     <Style TargetType="Button" x:Key="auth_blue_rounded_btn">
         <Setter Property="BackgroundColor" Value="#05AEF1"/>
         <Setter Property="BorderColor" Value="White"/>
-        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="TextColor" Value="#e5e5e5"/>
+        <Setter Property="FontSize" Value="Large"/>
         <Setter Property="BorderWidth" Value="1"/>
-        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="CornerRadius" Value="25"/>
     </Style>
 
     <Style TargetType="Button" x:Key="white_rounded_btn">
         <Setter Property="BorderColor" Value="White"/>
-        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="TextColor" Value="#05AEF1"/>
         <Setter Property="BorderWidth" Value="1"/>
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
 
 
     <Style TargetType="Button" x:Key="button_back">
-        <Setter Property="BackgroundColor">
-            <Setter.Value>
-                <Image Source="Media/Images/LeftArrow.png" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="ImageSource" Value="LeftArrow.png"></Setter>
+        <Setter Property="BackgroundColor" Value="Transparent"></Setter>
     </Style>
 
     <Style TargetType="Button" x:Key="blue_cornered_filled_btn">
         <Setter Property="BackgroundColor" Value="#05AEF1"/>
         <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="TextColor" Value="White"/>
     </Style>
 
 
@@ -44,6 +45,7 @@
 
     <Style TargetType="Button" x:Key="gray_cornered_filled_btn">
         <Setter Property="BackgroundColor" Value="Gray"/>
+        <Setter Property="TextColor" Value="White"/>
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
 

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup  xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  xmlns:controls1="clr-namespace:CRMMobileApp.Controls" 
+                  x:Name="this"
+                  BackgroundColor="Transparent"
+                  Background="Transparent"
+                  xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+                  x:Class="CRMMobileApp.Views.Popups.LockedScreenPopup">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <RelativeLayout   BackgroundColor="Transparent">
+        <Frame
+            Opacity="0.6"
+            BackgroundColor="Black"
+            Background="Black"
+            Margin="-1000,-1000,-1000,-1000"/>
+       
+        <Label
+            RelativeLayout.YConstraint="110"
+            RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                        Property=Width, Factor=0.5, Constant=-80}" 
+            TextColor="White"
+            FontSize="24"
+            Text="Экран заблокирован, введите Ваш пин код" />
+        
+        <controls:EntryOutlined  
+                x:Name="entry"
+                TextMargin="45,0,0,0"
+                PlaceholderMargin="45,0,0,0"
+                PlaceholderColor="#e5e5e5"
+                IsEnabled="False"
+                Placeholder="Введите пин"
+                Text="{Binding Source={Reference this},Path=Password,Mode=TwoWay}"
+                RelativeLayout.YConstraint="200"
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-120}" 
+                WidthRequest="225"
+                Style="{StaticResource gray_bordered_entry}"/>
+        
+        <Image 
+             HeightRequest="30"
+             WidthRequest="30"
+             RelativeLayout.YConstraint="208"
+             RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=entry, 
+                     Property=X, Factor=1, Constant=10}" 
+             Source="login.png"/>
+
+        <controls1:AuthKeyboard
+            Padding="0,0,0,0"
+                   x:Name="keyboard"
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-80}" 
+                     RelativeLayout.YConstraint = "{ConstraintExpression Type=RelativeToView, ElementName=entry, 
+                          Property=Y, Factor=1, Constant=60}" />
+
+        <Button 
+                    FontSize="15"
+                    Command="{Binding Source={Reference this},Path=Logout}"
+                    RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToView, ElementName=keyboard, 
+                             Property=Y, Factor=1, Constant=250}" 
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                             Property=Width, Factor=0.5, Constant=-45}" 
+                    BackgroundColor="Transparent"
+                    BorderWidth="0"
+                    Text="Выйти" />
+    </RelativeLayout>
+</behaviors:Popup>

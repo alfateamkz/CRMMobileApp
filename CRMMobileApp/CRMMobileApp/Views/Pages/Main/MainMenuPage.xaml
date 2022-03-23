@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             x:Class="CRMMobileApp.Views.Pages.Main.MainMenuPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout
+              Background="{DynamicResource grayBg}">
+            <Frame 
+                x:Name="navigationFrame"
+                CornerRadius="30"
+                Background="{DynamicResource blueColor}"
+                RelativeLayout.YConstraint="50"
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-150}" 
+                WidthRequest="300"
+                HeightRequest="15">
+                <StackLayout 
+                    Orientation="Horizontal">
+                    <Button 
+                        Margin="0"
+                        Padding="0"
+                        Style="{StaticResource white_rounded_btn}"
+                        Text="Главное"/>
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        Command="{Binding Source={Reference this},Path=GoToStockPage}"
+                        Style="{StaticResource transparent_btn}"
+                        Text="Склад"/>
+                    <Button
+                        Margin="0"
+                        Padding="0"
+                        Command="{Binding Source={Reference this},Path=GoToEquipmentPage}"
+                        Style="{StaticResource transparent_btn}"
+                        Text="Оборудование"/>
+                </StackLayout>
+            </Frame>
+            <Grid 
+                
+                RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToView,  ElementName=navigationFrame,
+                     Property=Y, Factor=1, Constant=70}" 
+                RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                     Property=Width, Factor=0.5, Constant=-285}" 
+                RowSpacing="1"
+                ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    ImageSource="completed.png"
+                    Text="Закрытые заказы"/>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    ImageSource="create_transaction.png"
+                    Text="Создать транзакцию"/>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    ImageSource="x_report_cashier.png"
+                    Text="Х-Отчет кассира"/>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    ImageSource="x_report.png"
+                    Text="Х-Отчет"/>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    ImageSource="open_cash.png"
+                    Text="Открыть денежный ящик"/>
+                <Button 
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    ImageSource="close_duty.png"
+                    Text="Закрыть смену"/>
+            </Grid>
+            <Button 
+                    FontSize="11"
+                     RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                             Property=Height, Factor=1, Constant=-50}" 
+                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                             Property=Width, Factor=0.5, Constant=-105}" 
+                    BackgroundColor="Transparent"
+                    BorderWidth="0"
+                    Text="Информация о программе">
+                <Button.ImageSource>
+                    <FileImageSource 
+                        
+                        File="info.png"/>
+                </Button.ImageSource>
+            </Button>
+           
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

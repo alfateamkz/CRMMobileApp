@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+             x:Name="this"
+             x:Class="CRMMobileApp.Views.Popups.NewClientPopup">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <StackLayout>
+        <Button 
+            Command="{Binding Source={Reference this},Path=Close}"
+            FontSize="26"
+            FontAttributes="Bold"
+            Text="Новый клиент"
+            ImageSource="LeftArrow.png"/>
+        <StackLayout
+            Orientation="Horizontal">
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Text="{Binding Source={Reference this},Path=Surname,Mode=TwoWay}"
+                Placeholder="Фамилия"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Text="{Binding Source={Reference this},Path=Name,Mode=TwoWay}"
+                Placeholder="Имя"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Text="{Binding Source={Reference this},Path=Patronymic,Mode=TwoWay}"
+                Placeholder="Отчество"
+                Style="{StaticResource gray_bordered_entry}"/>
+        </StackLayout>
+        <StackLayout
+            Orientation="Horizontal">
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Text="{Binding Source={Reference this},Path=Phone,Mode=TwoWay}"
+                Placeholder="+7(___)___-__-__"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Text="{Binding Source={Reference this},Path=CardNumber,Mode=TwoWay}"
+                Placeholder="Номер карты"
+                Style="{StaticResource gray_bordered_entry}"/>
+        </StackLayout>
+        <StackLayout
+            Orientation="Horizontal">
+            <DatePicker
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                Date="{Binding Source={Reference this},Path=BirthDate,Mode=TwoWay}"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <Picker  
+                IsEnabled="True"
+                Margin="20,25,20,0"
+                ItemsSource="{Binding Source={Reference this},Path=Genders,Mode=TwoWay}"
+                SelectedItem="{Binding Source={Reference this},Path=SelectedGender,Mode=TwoWay}"
+                Style="{StaticResource gray_bordered_entry}"/>
+        </StackLayout>
+        <StackLayout 
+                  Orientation="Horizontal">
+            <Button 
+                  Command="{Binding Source={Reference this},Path=CreateClient}"
+                  Style="{StaticResource blue_bordered_btn}"
+                  Margin="200,0,0,0"
+                  Text="Создать"/>
+            <Button 
+                  Command="{Binding Source={Reference this},Path=CreateClientAndAttach}"
+                  Style="{StaticResource blue_cornered_filled_btn}"
+                  Margin="25,0,0,0"
+                  Text="Создать и прикрепить к заказу"/>
+        </StackLayout>
+    </StackLayout>
+</behaviors:Popup>
