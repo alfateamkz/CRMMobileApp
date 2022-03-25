@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMMobileApp.Controls.Templates.Devices.PosTerminalCard">
+  <ContentView.Content>
+        <Frame
+            CornerRadius="15"
+            BackgroundColor="White">
+            <Grid>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Image
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        Source="pos.png"/>
+                    <StackLayout>
+                        <StackLayout 
+                            Orientation="Horizontal">
+                            <Ellipse 
+                                WidthRequest="8"
+                                HeightRequest="8"
+                                Fill="Green"/>
+                            <Label Text="НАЗВАНИЕ УСТРОЙСТВА"/>
+                        </StackLayout>
+                        <Label Text="127.0.0.1"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

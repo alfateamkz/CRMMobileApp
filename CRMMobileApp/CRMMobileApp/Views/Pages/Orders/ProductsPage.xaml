@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CRMMobileApp.Controls" 
+             xmlns:templates="clr-namespace:CRMMobileApp.Controls.Templates"
+             x:Class="CRMMobileApp.Views.Pages.Orders.ProductsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid        
+            ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            
+            <controls:LeftOrderPanel Grid.Column="0"/>
+
+            <Grid Grid.Column="1"
+                  Background="#E7E7E7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0"
+                      Background="#444444">
+                    <StackLayout 
+                             Background="#444444"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             Orientation="Horizontal">
+                        <Frame 
+                            CornerRadius="20"
+                            Margin="0,18,0,18"
+                            VerticalOptions="Center"
+                            BackgroundColor="#292929">
+                            <Label
+                               TextColor="White"
+                               Text="Бариста Бариста"/>
+                        </Frame>
+                        <ImageButton 
+                            BackgroundColor="Transparent"
+                            Margin="0,18,0,18"
+                            Source="locker.png"/>
+                        <ImageButton 
+                            BackgroundColor="Transparent"
+                            Margin="0,18,0,18"
+                            Source="cloud.png"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid
+                    Grid.Row="1">
+                    <Frame BackgroundColor="Transparent">
+                        <StackLayout
+                            Orientation="Horizontal">
+                            <Label 
+                                WidthRequest="40"
+                                HorizontalOptions="Start"
+                                BackgroundColor="{DynamicResource blueColor}"
+                                TextColor="White"
+                                Text="Все"/>
+                            <Label 
+                                HorizontalOptions="Start"
+                                BackgroundColor="#C4C4C4"
+                                TextColor="Gray"
+                                Text="Название категории"/>
+                        </StackLayout>
+                    </Frame>
+                    <ImageButton
+                           WidthRequest="40"
+                           HeightRequest="40"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           CornerRadius="40"
+                           Margin="0,0,15,0"
+                           BackgroundColor="#1D1D1D"
+                           Source="search.png"/>
+                </Grid>
+           
+
+                <ListView Grid.Row="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:ProductCard
+                                WidthRequest="150"
+                                HeightRequest="150"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

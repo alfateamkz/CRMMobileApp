@@ -58,6 +58,7 @@
                     <ColumnDefinition Width="300"/>
                 </Grid.ColumnDefinitions>
                 <Button 
+                    Command="{Binding Source={Reference this},Path=GoToBalanceAtStock}"
                     BackgroundColor="White"
                     BorderWidth="0"
                     Grid.Row="0"
@@ -65,6 +66,7 @@
                     ImageSource="stock_balance.png"
                     Text="Остатки на складе"/>
                 <Button 
+                    Command="{Binding Source={Reference this},Path=GoToSalesOnDuty}"
                     BackgroundColor="White"
                     BorderWidth="0"
                     Grid.Row="0"
@@ -72,6 +74,7 @@
                     ImageSource="sales_on_duty.png"
                     Text="Продажи за смену"/>
                 <Button 
+                    Command="{Binding Source={Reference this},Path=GoToSalesByIngridient}"
                     BackgroundColor="White"
                     BorderWidth="0"
                     Grid.Row="1"
@@ -88,17 +91,17 @@
               
             </Grid>
             <Button 
+                    Command="{Binding Source={Reference this},Path=ShowAboutSoftwarePopup}"
                     FontSize="11"
-                     RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Height, Factor=1, Constant=-50}" 
-                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Width, Factor=0.5, Constant=-105}" 
                     BackgroundColor="Transparent"
                     BorderWidth="0"
                     Text="Информация о программе">
                 <Button.ImageSource>
                     <FileImageSource 
-                        
                         File="info.png"/>
                 </Button.ImageSource>
             </Button>

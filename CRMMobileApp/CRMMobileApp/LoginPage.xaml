@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:XamarinSamples.Views.Controls"
+             xmlns:controls1="clr-namespace:CRMMobileApp.Controls"
+             x:Name="this"
+             x:Class="CRMMobileApp.LoginPage"
+             BackgroundColor="#236D86">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <Grid >
+        <StackLayout 
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Image      
+                Source="logo.png" 
+                WidthRequest="162"
+                HeightRequest="80"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                Placeholder="Домен"
+                PlaceholderColor="#e5e5e5"
+                Text="{Binding Source={Reference this},Path=Domain,Mode=TwoWay}"
+                WidthRequest="300"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                Placeholder="Пользователь"
+                PlaceholderColor="#e5e5e5"
+                Text="{Binding Source={Reference this},Path=Username,Mode=TwoWay}"
+                WidthRequest="300"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <controls:EntryOutlined  
+                TextMargin="20,0,0,0"
+                PlaceholderMargin="20,0,0,0"
+                Placeholder="Пароль"
+                PlaceholderColor="#e5e5e5"
+                Text="{Binding Source={Reference this},Path=Password,Mode=TwoWay}"
+                WidthRequest="300"
+                Style="{StaticResource gray_bordered_entry}"/>
+            <Button
+                  HeightRequest="40"
+                  WidthRequest="300"
+                  Style="{StaticResource blue_cornered_filled_btn}"
+                  Text="Войти"/>
+        </StackLayout>
+    </Grid>
+ 
+
+</ContentPage>

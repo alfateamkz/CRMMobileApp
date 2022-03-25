@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             x:Class="CRMMobileApp.Views.Pages.Tables.SalesOnDuty">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid 
+                HeightRequest="100"
+                Background="#444444">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    Margin="-40,0,0,0"
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    Source="LeftArrow.png"/>
+                <Label 
+                    Grid.Column="1"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Text="Продажи за смену"/>
+                <ImageButton
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    Source="cloud.png"/>
+            </Grid>
+            <dg:DataGrid>
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn
+                        HorizontalContentAlignment="Start"
+                        Title="Меню" 
+                        PropertyName="Name" 
+                        Width="9*"/>
+                    <dg:DataGridColumn 
+                        HorizontalContentAlignment="Start"
+                        Title="Стоимость" 
+                        PropertyName="Amount" 
+                        Width="1*"/>
+                    <dg:DataGridColumn 
+                        HorizontalContentAlignment="Start"
+                        Title="Кол-во" 
+                        PropertyName="Amount" 
+                        Width="1*"/>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

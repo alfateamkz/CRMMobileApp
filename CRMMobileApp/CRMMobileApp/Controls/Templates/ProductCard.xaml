@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMMobileApp.Controls.Templates.ProductCard">
+  <ContentView.Content>
+        <Frame
+            CornerRadius="15"
+            BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0"/>
+                <Label Grid.Row="1"
+                       Margin="0,0,0,10"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+                <Label Grid.Row="2"
+                       Margin="0,0,0,10"
+                       Text="0 р"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+            </Grid>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

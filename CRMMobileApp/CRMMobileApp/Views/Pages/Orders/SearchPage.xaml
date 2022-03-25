@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CRMMobileApp.Controls"
+             xmlns:templates="clr-namespace:CRMMobileApp.Controls.Templates" 
+             xmlns:controls1="clr-namespace:XamarinSamples.Views.Controls"
+             x:Class="CRMMobileApp.Views.Pages.Orders.SearchPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid        
+            ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            
+            <controls:LeftOrderPanel Grid.Column="0"/>
+
+            <Grid Grid.Column="1"
+                  Background="#E7E7E7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0"
+                      Background="#444444">
+                    <StackLayout 
+                             Background="#444444"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             Orientation="Horizontal">
+                        <Frame 
+                            CornerRadius="20"
+                            Margin="0,18,0,18"
+                            VerticalOptions="Center"
+                            BackgroundColor="#292929">
+                            <Label
+                               TextColor="White"
+                               Text="Бариста Бариста"/>
+                        </Frame>
+                        <ImageButton 
+                            BackgroundColor="Transparent"
+                            Margin="0,18,0,18"
+                            Source="locker.png"/>
+                        <ImageButton 
+                            BackgroundColor="Transparent"
+                            Margin="0,18,0,18"
+                            Source="cloud.png"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid
+                    Grid.Row="1">
+
+                    <controls1:EntryOutlined 
+                        Margin="15,0,15,0"
+                        TextMargin="50,0,0,0"
+                        PlaceholderMargin="50,0,0,0"
+                        PlaceholderColor="#e5e5e5"
+                        Style="{StaticResource white_cornered_entry}"
+                        Placeholder="Поиск по названию или штрихкоду"
+                        HorizontalOptions="FillAndExpand"/>
+                    <ImageButton
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           CornerRadius="15"
+                           Margin="25,0,0,20"
+                           BackgroundColor="#C4C4C4"
+                           Source="close_white.png"/>
+                    <ImageButton
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           CornerRadius="15"
+                           Margin="0,0,25,20"
+                           BackgroundColor="{DynamicResource blueColor}"
+                           Source="search.png"/>
+                </Grid>
+               
+                <ListView Grid.Row="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:CategoryCard
+                                WidthRequest="150"
+                                HeightRequest="150"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid x:Name="before_search_banner" Grid.Row="2">
+                    <Label 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="Начните вводить название, чтобы найти товар"/>
+                </Grid>
+
+                <Grid x:Name="not_found_banner" Grid.Row="2" IsVisible="False">
+                    <Label 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="Ничего не найдено по такому названию"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

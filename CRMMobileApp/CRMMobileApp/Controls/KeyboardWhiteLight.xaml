@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             x:Class="CRMMobileApp.Controls.KeyboardWhiteLight">
+    <ContentView.Resources>
+        <ResourceDictionary Source="../Resources/ButtonStyles.xaml"/>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+            RowSpacing="20"
+            ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Button 
+                Text="1" 
+                Grid.Row="0"
+                Grid.Column="0"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="1"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="2" 
+                Grid.Row="0"
+                Grid.Column="1"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="2"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="3" 
+                Grid.Row="0"
+                Grid.Column="2"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="3"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="4" 
+                Grid.Row="1"
+                Grid.Column="0"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="4"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="5" 
+                Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="5"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="6" 
+                Grid.Row="1"
+                Grid.Column="2"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="6"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="7" 
+                Grid.Row="2"
+                Grid.Column="0"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="7"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="8" 
+                Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="8"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="9" 
+                Grid.Row="2"
+                Grid.Column="2"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="9"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="." 
+                Grid.Row="3"
+                Grid.Column="0"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="."
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Text="0" 
+                Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="0"
+                Style="{StaticResource white_rounded_light_btn}"/>
+            <Button 
+                Grid.Row="3"
+                Grid.Column="2"
+                Command="{Binding Source={Reference this},Path=TapButton}"
+                CommandParameter="backspace"
+                Style="{StaticResource button_back}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

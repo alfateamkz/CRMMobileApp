@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:devices="clr-namespace:CRMMobileApp.Controls.Templates.Devices"
              x:Name="this"
              x:Class="CRMMobileApp.Views.Pages.Main.MainEquipmentPage">
     <ContentPage.Resources>
@@ -62,12 +62,16 @@
                     TextColorSelected="{DynamicResource blueColor}"
                     FontSize="12">
                     <Grid 
-                        Margin="0,20,0,0"
-                        BackgroundColor="Gray">
-                        <Label
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Text="TabContent1" />
+                        Margin="0,20,0,0">
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <devices:PosTerminalCard 
+                                         WidthRequest="200"
+                                         HeightRequest="200"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
                 </xct:TabViewItem>
 
@@ -78,10 +82,15 @@
                     TextColorSelected="{DynamicResource blueColor}"
                     FontSize="12">
                     <Grid>
-                        <Label    
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Text="TabContent2" />
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <devices:PrinterCard 
+                                         WidthRequest="200"
+                                         HeightRequest="200"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
                 </xct:TabViewItem>
                 <xct:TabViewItem
@@ -91,26 +100,31 @@
                     TextColorSelected="{DynamicResource blueColor}"
                     FontSize="12">
                     <Grid>
-                        <Label    
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Text="TabContentі" />
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <devices:CashMachineCard 
+                                         WidthRequest="200"
+                                         HeightRequest="200"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
                 </xct:TabViewItem>
             </xct:TabView>
 
             <Button 
+                    Command="{Binding Source={Reference this},Path=ShowAboutSoftwarePopup}"
                     FontSize="11"
-                     RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Height, Factor=1, Constant=-50}" 
-                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Width, Factor=0.5, Constant=-105}" 
                     BackgroundColor="Transparent"
                     BorderWidth="0"
                     Text="Информация о программе">
                 <Button.ImageSource>
                     <FileImageSource 
-                        
                         File="info.png"/>
                 </Button.ImageSource>
             </Button>

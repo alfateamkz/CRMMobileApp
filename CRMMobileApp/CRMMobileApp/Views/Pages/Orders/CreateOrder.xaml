@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CRMMobileApp.Controls"
+             x:Class="CRMMobileApp.Views.Pages.Orders.CreateOrder">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../../Resources/MainResources.xaml"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#404040">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackLayout 
+                Orientation="Horizontal"
+                Grid.Row="0"
+                HeightRequest="70"
+                Background="#444444">
+                <ImageButton
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    Margin="10,0,0,0"
+                    Source="LeftArrow.png"/>
+                <Image 
+                    Margin="20,0,0,0"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Grid.Column="0"
+                    Source="logo.png"/>
+            </StackLayout>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                      
+                    Grid.Column="0">
+                    <Grid
+                        HeightRequest="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.7*"/>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame 
+                           Margin="20,0,0,0"
+                            CornerRadius="20"
+                            Background="#444444"
+                            Grid.Column="0">
+                            <Label
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                Text="Заказ №999"/>
+                        </Frame>
+                        <StackLayout
+                              Margin="30,0,0,0"
+                              VerticalOptions="Center"
+                              Grid.Column="1">
+                            <Label
+                                TextColor="#e5e5e5"
+                                FontSize="10"
+                                Text="К оплате"/>
+                            <Label
+                                TextColor="{DynamicResource blueColor}"
+                                FontAttributes="Bold"
+                                Text="1000.00 Р"/>
+                        </StackLayout>
+                        <StackLayout
+                              VerticalOptions="Center"
+                              Grid.Column="2">
+                            <Label
+                                TextColor="#e5e5e5"
+                                FontSize="10"
+                                Text="Сдача"/>
+                            <Label
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                Text="0 Р"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid 
+                        VerticalOptions="FillAndExpand"
+                        Margin="20,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton
+                            Grid.Column="0">
+                            <RadioButton.Style>
+                                <Style TargetType="RadioButton">
+                                    <Style.Triggers>
+                                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="False">
+                                            <Setter Property="ControlTemplate">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Frame
+                                                            BorderColor="Transparent"
+                                                            BackgroundColor="White"
+                                                            CornerRadius="20">  
+                                                            <StackLayout>
+                                                                <Label
+                                                            HorizontalOptions="Center"
+                                                            Text="Наличные"/>
+                                                                <Image 
+                                                            HorizontalOptions="Center"
+                                                            WidthRequest="150"
+                                                            HeightRequest="150"
+                                                            Source="cash_colored.png" />
+                                                                <Entry   
+                                                            WidthRequest="110"
+                                                            HorizontalOptions="Center"/>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                                            <Setter Property="ControlTemplate">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Frame
+                                                            BorderColor="{DynamicResource blueColor}"
+                                                            BackgroundColor="White"
+                                                            CornerRadius="20">
+                                                            <StackLayout>
+                                                                <Label
+                                                            HorizontalOptions="Center"
+                                                            Text="Наличные"/>
+                                                                <Image 
+                                                            HorizontalOptions="Center"
+                                                            WidthRequest="150"
+                                                            HeightRequest="150"
+                                                            Source="cash_colored.png" />
+                                                                <Entry   
+                                                            WidthRequest="110"
+                                                            HorizontalOptions="Center"/>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </RadioButton.Style>
+                        </RadioButton>
+                        <RadioButton
+                            Grid.Column="1">
+                            <RadioButton.Style>
+                                <Style TargetType="RadioButton">
+                                    <Style.Triggers>
+                                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="False">
+                                            <Setter Property="ControlTemplate">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Frame
+                                                            BorderColor="Transparent"
+                                                            BackgroundColor="White"
+                                                            CornerRadius="20">
+                                                            <StackLayout>
+                                                                <Label
+                                                                    HorizontalOptions="Center"
+                                                                    Text="Карта"/>
+                                                                <Image 
+                                                                    HorizontalOptions="Center"
+                                                                    WidthRequest="150"
+                                                                    HeightRequest="150"
+                                                                    Source="card_colored.png" />
+                                                                <Entry   
+                                                                    WidthRequest="110"
+                                                                    HorizontalOptions="Center"/>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger TargetType="RadioButton" Property="IsChecked" Value="True">
+                                            <Setter Property="ControlTemplate">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Frame
+                                                            BorderColor="{DynamicResource blueColor}"
+                                                            BackgroundColor="White"
+                                                            CornerRadius="20">
+                                                            <StackLayout>
+                                                                <Label
+                                                                    HorizontalOptions="Center"
+                                                                    Text="Карта"/>
+                                                                <Image 
+                                                                    HorizontalOptions="Center"
+                                                                    WidthRequest="150"
+                                                                    HeightRequest="150"
+                                                                    Source="card_colored.png" />
+                                                                <Entry   
+                                                                    WidthRequest="110"
+                                                                    HorizontalOptions="Center"/>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </RadioButton.Style>
+                        </RadioButton>
+                    </Grid>
+             
+                </StackLayout>
+                <StackLayout
+                       VerticalOptions="FillAndExpand"
+                       Margin="0,10,10,0"
+                       Grid.Column="1">
+                    <Frame
+                        VerticalOptions="FillAndExpand"
+                        CornerRadius="20"
+                        Background="#444444">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="7.5*"/>
+                                <RowDefinition Height="1.5*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackLayout 
+                                Grid.Row="0"
+                                Spacing="0"
+                                HorizontalOptions="Center"
+                                HeightRequest="40"
+                                Orientation="Horizontal">
+                                <Button
+                                    Style="{StaticResource white_rounded_light_btn}"
+                                    Text="+100"/>
+                                <Button
+                                    Style="{StaticResource white_rounded_light_btn}"
+                                    Text="+500"/>
+                                <Button
+                                    Style="{StaticResource white_rounded_light_btn}"
+                                    Text="+1000"/>
+                            </StackLayout>
+                            <controls:KeyboardWhiteLight
+                                Grid.Row="1"
+                                VerticalOptions="Center"
+                                Margin="70,20,0,0"/>
+                            <Button
+                                Grid.Row="2"
+                                HeightRequest="40"
+                                Margin="10,20,10,0"
+                                Style="{StaticResource green_cornered_filled_btn}"
+                                Text="Оплатить"/>
+                        </Grid>
+                    </Frame>
+                  
+                </StackLayout>
+            </Grid>
+            <Button
+                Grid.Row="2"
+                Margin="20,10,0,20"
+                HeightRequest="33"
+                WidthRequest="300"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                FontSize="10"
+                Style="{StaticResource gray_cornered_filled_btn}"
+                Text="Чек"
+                ImageSource="receipt.png" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

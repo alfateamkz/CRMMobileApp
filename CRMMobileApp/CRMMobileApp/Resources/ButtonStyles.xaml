@@ -25,6 +25,21 @@
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
 
+    <Style TargetType="Button" x:Key="white_rounded_light_btn">
+        <Setter Property="BorderColor" Value="White"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="CornerRadius" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="black_rounded_light_btn">
+        <Setter Property="BorderColor" Value="#e5e5e5"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="CornerRadius" Value="20"/>
+    </Style>
 
     <Style TargetType="Button" x:Key="button_back">
         <Setter Property="ImageSource" Value="LeftArrow.png"></Setter>
@@ -40,6 +55,7 @@
 
     <Style TargetType="Button" x:Key="green_cornered_filled_btn">
         <Setter Property="BackgroundColor" Value="#6CB86D"/>
+        <Setter Property="TextColor" Value="White"/>
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
 

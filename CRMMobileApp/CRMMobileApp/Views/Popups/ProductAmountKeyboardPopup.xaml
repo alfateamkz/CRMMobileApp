@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:CRMMobileApp.Controls"
+             x:Class="CRMMobileApp.Views.Popups.ProductAmountKeyboardPopup"
+             Size="250,500">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <Frame
+        CascadeInputTransparent="True"
+        CornerRadius="20">
+        <Grid ColumnSpacing="0"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand"
+                  Background="#EDEDED">
+                <StackLayout>
+                    <Label 
+                        FontSize="20"
+                        HorizontalOptions="End"
+                        Margin="0,0,10,0"
+                        FontAttributes="Bold"
+                        TextColor="Green"
+                        Text="1"/>
+                    <Label 
+                        HorizontalOptions="End"
+                        Margin="0,0,10,0"
+                        Text="0 руб."/>
+                </StackLayout>
+            </Grid>
+            
+            <controls:KeyboardBlackLight 
+                Grid.Row="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Grid.Column="0"
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    Style="{StaticResource transparent_btn}"
+                    Text="Отмена"/>
+                <Button 
+                    Grid.Column="1"
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    Style="{StaticResource blue_cornered_filled_btn}"
+                    Text="Ок"/>
+            </Grid>
+        </Grid>
+    </Frame>
+</behaviors:Popup>

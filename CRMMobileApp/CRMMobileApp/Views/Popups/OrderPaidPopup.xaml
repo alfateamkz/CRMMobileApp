@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+    xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this"
+    InputTransparent="True"
+    Background="Transparent"
+    x:Class="CRMMobileApp.Views.Popups.OrderPaidPopup"
+    Size="350,350">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <Frame
+        Background="#404040"
+        CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Label 
+                Grid.Row="0"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Text="Заказ успешно оплачен"/>
+            <StackLayout
+                Spacing="1"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" >
+                <Label              
+                    HorizontalOptions="Center"
+                    TextColor="#e5e5e5"
+                    Text="Cумма заказа"/>
+                <Label            
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    Text="140 р"/>
+                <Label           
+                    HorizontalOptions="Center"
+                    TextColor="#e5e5e5"
+                    Text="Карта"/>
+                <Label        
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    Text="140 р"/>
+            </StackLayout>
+            <Label 
+                Grid.Row="2"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Text="Без сдачи"/>
+            <Button 
+                Grid.Row="3"
+                Command="{Binding Source={Reference this},Path=Close}"
+                FontSize="16"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Text="Закрыть"
+                BackgroundColor="{DynamicResource blueColor}"
+                Background="{DynamicResource blueColor}"/>
+        </Grid>
+    </Frame>
+</behaviors:Popup>

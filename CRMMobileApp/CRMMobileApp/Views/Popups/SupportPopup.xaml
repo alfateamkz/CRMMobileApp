@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMMobileApp.Views.Popups.SupportPopup">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <Frame
+        BackgroundColor="{DynamicResource grayBlack}"
+        CornerRadius="20">
+        <Grid BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"
+                  BackgroundColor="{DynamicResource grayBlack}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image 
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="logo.png"/>
+
+                <StackLayout
+                     Grid.Column="1"
+                     Background="Transparent"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+                    <Label 
+                        TextColor="White"
+                        Text="Домен:"/>
+                    <Label 
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        TextColor="White"
+                        Text="Название домена"/>
+                    <Label 
+                        Margin="0,10,0,0"
+                        TextColor="White"
+                        Text="Точка продаж:"/>
+                    <Label 
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        TextColor="White"
+                        Text="Название точки продаж"/>
+                    <Label 
+                        Margin="0,10,0,0"
+                        TextColor="White"
+                        Text="Адрес:"/>
+                    <Label 
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        TextColor="White"
+                        Text="г. Москва"/>
+                </StackLayout>
+                
+                
+                <Grid Grid.Row="1"
+                    BackgroundColor="{DynamicResource blueColor}">
+                    <Label 
+                        Margin="40,0,0,0"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Text="Телефон поддержки:"/>
+                    <Label 
+                        Margin="0,0,40,0"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="22"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Text="8 800 555 35 35"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Frame>
+</behaviors:Popup>

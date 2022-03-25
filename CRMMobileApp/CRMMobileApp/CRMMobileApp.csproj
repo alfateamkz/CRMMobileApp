@@ -80,6 +80,7 @@
     <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.DataGrid" Version="4.8.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,16 +88,55 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\KeyboardBlackLight.xaml.cs">
+      <DependentUpon>KeyboardBlackLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\KeyboardWhiteLight.xaml.cs">
+      <DependentUpon>KeyboardWhiteLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Templates\Devices\CashMachineCard.xaml.cs">
+      <DependentUpon>CashMachineCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Templates\Devices\PosTerminalCard.xaml.cs">
+      <DependentUpon>PosTerminalCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Templates\ProductCard.xaml.cs">
+      <DependentUpon>ProductCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\Main\MainEquipmentPage.xaml.cs">
       <DependentUpon>MainEquipmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\Main\MainStockPage.xaml.cs">
       <DependentUpon>MainStockPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pages\Orders\ClosedOrdersPage.xaml.cs">
+      <DependentUpon>ClosedOrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\Orders\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\Orders\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Controls\AuthKeyboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\LeftOrderPanel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Templates\CategoryCard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Templates\ClosedOrderTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Templates\Devices\PrinterCard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Custom\EntryOutlined.xaml">
@@ -108,10 +148,28 @@
     <EmbeddedResource Update="Views\Pages\Main\MainMenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Orders\CategoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Orders\CreateOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Tables\BalanceAtStock.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Tables\SalesByIngridients.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Tables\SalesOnDuty.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Popups\AboutSoftware.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Popups\ClientsPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ErrorPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Popups\LockedScreenPopup.xaml">
@@ -123,8 +181,30 @@
     <EmbeddedResource Update="Views\Popups\OneButtonedPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\OrderCommentPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\OrderPaidPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ProductAmountKeyboardPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ProductOptionsPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ReturnOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Popups\SendReceiptTo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SupportPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Views\" />
   </ItemGroup>
 </Project>

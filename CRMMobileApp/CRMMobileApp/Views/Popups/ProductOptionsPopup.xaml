@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<behaviors:Popup
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMMobileApp.Views.Popups.ProductOptionsPopup">
+    <behaviors:Popup.Resources>
+        <ResourceDictionary Source="../../Resources/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/EntryStyles.xaml"/>
+        <ResourceDictionary Source="../../Resources/MainResources.xaml"/>
+    </behaviors:Popup.Resources>
+    <Frame 
+        CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="0.7*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0"
+                         Margin="0,20,0,0"
+                         Orientation="Horizontal">
+                <Image 
+                    WidthRequest="40"
+                    HeightRequest="40"/>
+                <Label
+                    TextColor="Black"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Text="Название позиции"/>
+            </StackLayout>
+
+            <ListView Grid.Row="1">
+
+            </ListView>
+
+            <Grid Grid.Row="2"
+                  BackgroundColor="#E9E9E9">
+                <Button 
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    TextColor="Black"
+                    Style="{StaticResource transparent_btn}"
+                    Text="Отмена"/>
+                <Button 
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Style="{StaticResource blue_cornered_filled_btn}"
+                    Text="Ок"/>
+            </Grid>
+        </Grid>
+    </Frame>
+</behaviors:Popup>

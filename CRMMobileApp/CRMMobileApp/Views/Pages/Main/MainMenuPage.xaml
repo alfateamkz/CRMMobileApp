@@ -102,10 +102,11 @@
                     Text="Закрыть смену"/>
             </Grid>
             <Button 
+                    Command="{Binding Source={Reference this},Path=ShowAboutSoftwarePopup}"
                     FontSize="11"
-                     RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.YConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Height, Factor=1, Constant=-50}" 
-                     RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
+                    RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, 
                              Property=Width, Factor=0.5, Constant=-105}" 
                     BackgroundColor="Transparent"
                     BorderWidth="0"

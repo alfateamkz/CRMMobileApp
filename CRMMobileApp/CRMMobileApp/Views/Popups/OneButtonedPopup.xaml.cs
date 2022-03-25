@@ -37,10 +37,7 @@ namespace CRMMobileApp.Views.Popups
         private ICommand close;
         public ICommand Close
         {
-            get => close ??= new RelayCommand(async obj =>
-            {
-                Dismiss(null);
-            });
+            get => close ??= new RelayCommand(async obj => Dismiss(null));
         }
     }
 }

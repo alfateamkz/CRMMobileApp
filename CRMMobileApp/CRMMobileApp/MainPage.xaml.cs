@@ -1,5 +1,6 @@
 ﻿using CRMMobileApp.Core;
 using CRMMobileApp.Views.Pages.Main;
+using CRMMobileApp.Views.Pages.Orders;
 using CRMMobileApp.Views.Popups;
 using System;
 using System.Collections.Generic;
@@ -38,11 +39,12 @@ namespace CRMMobileApp
             {
                 if (Password != "0000" && Password.Length == 4)
                 {
-                    App.Current.MainPage.Navigation.ShowPopup(new ClientsPopup());
+                    App.Current.MainPage.Navigation.ShowPopup(new SupportPopup());
                 }
                 else if (Password == "0000")
                 {
-                    App.Current.MainPage.Navigation.PushAsync(new MainMenuPage());
+                    App.Current.MainPage.Navigation.PushAsync(new SearchPage());
+                    //App.Current.MainPage.Navigation.PushAsync(new MainMenuPage());
                 }
                 password = value; 
                 OnPropertyChanged(nameof(Password));
